@@ -7,11 +7,17 @@ module.exports = {
         return response.json(annotationList);
     },
 
-    create(request, response) {
+    async create(request, response) {
         const {title, notes, priority } = request.body;
 
-        console.log(title)
-        console.log(notes)
-        console.log(priority)
+        if(!notes || !title) return response.status(400).json({error: "Necessário um título/anotação!"});
+
+        const annotationCreated = await Annotations.create({
+            title, 
+            notes,
+            priority
+        })
+
+        return response.json(annotationCreated);
     }
 }
