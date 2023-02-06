@@ -11,5 +11,6 @@ routes.delete('/annotations/:id', AnnotationController.delete);
 
 // Rota Priority
 routes.get('/priorities', PriorityController.read);
+routes.post('/priorities/:id', PriorityController.update);
 
 module.exports = routes;
