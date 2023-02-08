@@ -1,5 +1,5 @@
 import './global.css'
-
+import './sidebar.css'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
               <label for="title">Título da anotação</label>
               <input></input>
           </div>
-          <div className="input block">
+          <div className="input-block">
               <label for="nota">Anotações</label>
               <textarea></textarea>
           </div>
