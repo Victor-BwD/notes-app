@@ -1,5 +1,6 @@
 main {
     flex: 1;
+    margin-left: 350px;
 }
 
 main ul {
@@ -48,4 +49,14 @@ li.notepad-infos textarea {
     border: 0;
     background: #fff;
     resize: none;
+}
+
+li.notepad-info span {
+    color: #c4c4c4;
+    cursor: pointer;
+}
+
+li.notepad-info span:hover {
+    color: #eb8f7a;
+    transition: 0.2s;
 }
