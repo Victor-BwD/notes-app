@@ -1,6 +1,7 @@
 import './global.css'
 import './sidebar.css'
 import './app.css'
+import './main.css'
 
 function App() {
   return (
