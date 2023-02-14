@@ -10,8 +10,11 @@ main ul {
     list-style: none;
 }
 
+main ul:not(:first-child){
+    margin-top: 20px;
+}
+
 li.notepad-infos div {
-    margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }

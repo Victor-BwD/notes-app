@@ -25,6 +25,8 @@ function App() {
       </aside>
       <main>
           <Notes />
+          <Notes />
+          <Notes />
       </main>
     </div>
   );
