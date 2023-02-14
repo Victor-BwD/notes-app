@@ -63,3 +63,9 @@ aside form button[type=submit] {
     color: #fff;
     cursor: pointer;
 }
+
+@media (max-width: 1000px) {
+    aside {
+        position: relative;
+    }
+}

@@ -27,6 +27,7 @@ function App() {
           <Notes />
           <Notes />
           <Notes />
+          <Notes />
       </main>
     </div>
   );
