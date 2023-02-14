@@ -9,6 +9,8 @@ module.exports = {
 
     async create(request, response) {
         const {title, notes, priority } = request.body;
+        console.log({title, notes})
+        console.log(request.body);
 
         if(!notes || !title) return response.status(400).json({error: "Necessário um título/anotação!"});
 

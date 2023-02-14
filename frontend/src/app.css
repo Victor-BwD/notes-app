@@ -5,7 +5,12 @@
 
     display: flex;
     flex-direction: row;
+    
     align-items: flex-start;
+}
+
+#app ul {
+    
 }
 
 @media (max-width: 1000px) {
