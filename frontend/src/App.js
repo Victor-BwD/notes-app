@@ -33,6 +33,10 @@ function App() {
         title,
         notes,
     })
+
+    setNotes('');
+    setTitle('');
+    
     console.log(await response.data)
   }
 
