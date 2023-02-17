@@ -1,18 +1,18 @@
 
 
-export default function Notes() {
+export default function Notes({ data }) {
     return (
         <>
         <ul>
           <li className='notepad-infos'>
             <div>
-              <strong>Fazer compras</strong>
+              <strong>{data.title}</strong>
               <div>
                 x
               </div>
             </div>
 
-            <textarea defaultValue="Lorem Ipsum is simply dummy text of the printing and typesetting industry."></textarea>
+            <textarea defaultValue={data.notes}></textarea>
             <span>!</span>
           </li>
         </ul>

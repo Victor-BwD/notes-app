@@ -11,12 +11,13 @@ import api from './components/services/api';
 function App() {
   const [title, setTitle ] = useState('');
   const [notes, setNotes ] = useState('');
+  const [allNotes, setAllNotes] = useState([]);
 
   async function getPosts() {
     try{
       const response = await api.get('/annotations')
       const data = response.data;
-      console.log(data)
+      setAllNotes(data);
     }catch(error) {
       console.log(error);
     }
@@ -37,7 +38,7 @@ function App() {
     setNotes('');
     setTitle('');
     
-    console.log(await response.data)
+    setAllNotes([...allNotes, response.data])
   }
 
   return (
@@ -65,10 +66,9 @@ function App() {
         </form>
       </aside>
       <main>
-          <Notes />
-          <Notes />
-          <Notes />
-          <Notes />
+          {allNotes.map(data => (
+            <Notes data={data}/>
+          ))}
       </main>
     </div>
   );
