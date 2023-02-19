@@ -61,8 +61,8 @@ function App() {
               onChange={e => setNotes(e.target.value)}
               ></textarea>
           </div>
-
-          <button type="submit">Salvar</button>
+          
+          <button type="submit" style={{background: title.length > 0 && notes.length > 0 ? "#F00" : "#FFD3CA"}}>Salvar</button>
         </form>
       </aside>
       <main>
