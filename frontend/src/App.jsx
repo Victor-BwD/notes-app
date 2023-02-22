@@ -7,6 +7,7 @@ import Notes from './components/notes';
 import { useEffect, useState } from 'react';
 
 import api from './components/services/api';
+import RadioButton from './components/radioButton';
 
 function App() {
   const [title, setTitle ] = useState('');
@@ -50,6 +51,7 @@ function App() {
           <label htmlFor='title'>Título da anotação</label>
           <input 
               required
+              maxLength="30"
               value={title}
               onChange={e => setTitle(e.target.value)}
               ></input>
@@ -58,12 +60,14 @@ function App() {
               <label htmlFor='nota'>Anotações</label>
               <textarea 
               value={notes}
+              maxLength="120"
               onChange={e => setNotes(e.target.value)}
               ></textarea>
           </div>
           
           <button type="submit" style={{background: title.length > 0 && notes.length > 0 ? "#F00" : "#FFD3CA"}}>Salvar</button>
         </form>
+        <RadioButton />
       </aside>
       <main>
           {allNotes.map(data => (
