@@ -4,7 +4,7 @@ import './styles-priority.css'
 import { useState } from "react";
 import api from '../services/api'
 
-export default function Notes({ data, handleDelete }) {
+export default function Notes({ data, handleDelete, handleChangePriority }) {
   const [changedNote, setChangedNote] = useState('');
 
   async function handleSave(e, notes) {
@@ -50,7 +50,7 @@ export default function Notes({ data, handleDelete }) {
 
             </textarea>
             <span>
-              <AiOutlineExclamationCircle size="20"/>
+              <AiOutlineExclamationCircle onClick={() => handleChangePriority(data._id)} size="20"/>
             </span>
           </li>
         </ul>

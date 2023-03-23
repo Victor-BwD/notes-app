@@ -36,6 +36,14 @@ function App() {
     }
   }
 
+  async function handleChangePriority(id) {
+    const note = await api.post(`/priorities/${id}`)
+
+    if(note){
+      getPosts();
+    }
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -79,7 +87,7 @@ function App() {
       </aside>
       <main>
           {allNotes.map(data => (
-            <Notes key={data._id} data={data} handleDelete={handleDelete}/>
+            <Notes key={data._id} data={data} handleDelete={handleDelete} handleChangePriority={handleChangePriority}/>
           ))}
       </main>
     </div>
