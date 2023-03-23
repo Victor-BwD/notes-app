@@ -15,6 +15,11 @@ export default function Notes({ data }) {
     }
   }
 
+  function handleEdit(e, priority) {
+    e.style.cursor = 'text';
+    e.style.borderRadius = '5px';
+  }
+
     return (
         <>
         <ul>
@@ -28,6 +33,8 @@ export default function Notes({ data }) {
 
             <textarea 
             defaultValue={data.notes}
+
+            onClick={e => handleEdit(e.target, data.priority)}
             onChange={e => setChangedNote(e.target.value)}
             onBlur={e => handleSave(e.target, data.notes)}
             >
