@@ -8,6 +8,8 @@ export default function Notes({ data }) {
   const [changedNote, setChangedNote] = useState('');
 
   async function handleSave(e, notes) {
+    e.style.cursor = 'default';
+
     if(changedNote && changedNote !== notes) {
       await api.post(`/contents/${data._id}`,{
         notes: changedNote,
@@ -18,6 +20,12 @@ export default function Notes({ data }) {
   function handleEdit(e, priority) {
     e.style.cursor = 'text';
     e.style.borderRadius = '5px';
+
+    if(priority) {
+      e.style.boxShadow = '0 0 5px white';
+    }else{
+      e.style.boxShadow = '0 0 5px gray';
+    }
   }
 
     return (
