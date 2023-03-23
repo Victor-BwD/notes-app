@@ -9,6 +9,7 @@ export default function Notes({ data }) {
 
   async function handleSave(e, notes) {
     e.style.cursor = 'default';
+    e.style.boxShadow = 'none';
 
     if(changedNote && changedNote !== notes) {
       await api.post(`/contents/${data._id}`,{
